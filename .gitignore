@@ -1,2 +1,11 @@
+# Build files
 /target
+
+# Configuration files
 *.env
+
+# AWS Lambda zip file
+lambda.zip
+
+# Lambda invokation
+output.json
