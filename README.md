@@ -19,7 +19,7 @@ $ cargo build --release
 ### Build on MacOS
 
 ```commandline
-$ cargo build --release --target x86_64-unknown-linux-mus
+$ cargo build --release --target x86_64-unknown-linux-musl
 ```
 
 To build the AWS Lambda zip file
