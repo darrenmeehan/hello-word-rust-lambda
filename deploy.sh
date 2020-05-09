@@ -16,6 +16,6 @@ aws lambda update-function-code --function-name registerOnUpload \
 aws lambda invoke --function-name registerOnUpload \
   --cli-binary-format raw-in-base64-out \
   --payload '{"firstName": "world"}' \
-  output.jsons
+  output.json
 
 cat output.json
