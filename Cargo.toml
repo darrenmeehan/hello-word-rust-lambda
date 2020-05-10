@@ -19,3 +19,5 @@ rusoto_dynamodb = "0.43.0"
 rusoto_core = "0.43.0"
 simple_logger = "1.6.0"
 log = "0.4.8"
+#  FIXME causing version conflicts
+# tracing-honeycomb = { git = "https://github.com/inanna-malick/tracing-honeycomb/", branch = "v2-rain" }
