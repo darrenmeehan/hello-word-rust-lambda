@@ -3,6 +3,7 @@
 
 # Configuration files
 *.env
+Lambda.toml
 
 # AWS Lambda zip file
 lambda.zip
