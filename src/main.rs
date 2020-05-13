@@ -26,10 +26,7 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
     let id = event["Records"][0]["s3"]["object"]["key"].to_string();
     debug!("id={}", id);
 
-    debug!("This is an example debug message.");
-    info!("This is an example info message.");
-    warn!("This is an example warn message.");
-    error!("This is an example error message.");
+    example_logging();
 
     // FIXME Get table name from environment variable
     let table_name: String = "photos".to_string();
@@ -59,4 +56,11 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
         Err(error) => panic!("Problem adding to DB: {}", error),
     };
     Ok(event)
+}
+
+fn example_logging() {
+    debug!("This is an example debug message.");
+    info!("This is an example info message.");
+    warn!("This is an example warn message.");
+    error!("This is an example error message.");
 }
