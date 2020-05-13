@@ -26,8 +26,7 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
 
     example_logging();
 
-    // FIXME Get table name from environment variable
-    let table_name: String = "photos".to_string();
+    let table_name = get_dynamodb_table_name();
     let details = AttributeValue {
         s: Option::from(image_information),
         ..Default::default()
@@ -54,6 +53,12 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
         Err(error) => panic!("Problem adding to DB: {}", error),
     };
     Ok(event)
+}
+
+fn get_dynamodb_table_name() -> String {
+// FIXME Get table name from environment variable
+    let table_name: String = "photos".to_string();
+    table_name
 }
 
 fn get_image_information(event: &Value) -> String {
