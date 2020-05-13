@@ -17,10 +17,8 @@ async fn main(event: Value) -> Result<Value, Error> {
 
 async fn handler(event: Value) -> Result<Value, Box<Error>> {
     simple_logger::init().unwrap();
-
-    // Check event is s3 notification
-    // Should this be so specific?
     debug!("event={}", event);
+    
     // FIXME Add support for more than one record..
     let image_information = get_image_information(&event);
     let id = event["Records"][0]["s3"]["object"]["key"].to_string();
