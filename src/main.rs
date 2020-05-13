@@ -18,7 +18,9 @@ async fn main(event: Value) -> Result<Value, Error> {
 async fn handler(event: Value) -> Result<Value, Box<Error>> {
     simple_logger::init().unwrap();
     debug!("event={}", event);
-    
+
+    let table_name = get_dynamodb_table_name();
+
     // FIXME Add support for more than one record..
     let image_information = get_image_information(&event);
     let id = event["Records"][0]["s3"]["object"]["key"].to_string();
@@ -26,7 +28,6 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
 
     example_logging();
 
-    let table_name = get_dynamodb_table_name();
     let details = AttributeValue {
         s: Option::from(image_information),
         ..Default::default()
