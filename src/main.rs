@@ -22,7 +22,7 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
     // Should this be so specific?
     debug!("event={}", event);
     // FIXME Add support for more than one record..
-    let s3_object = event["Records"][0]["s3"]["object"].to_string();
+    let image_information = get_image_information(&event);
     let id = event["Records"][0]["s3"]["object"]["key"].to_string();
     debug!("id={}", id);
 
@@ -31,7 +31,7 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
     // FIXME Get table name from environment variable
     let table_name: String = "photos".to_string();
     let details = AttributeValue {
-        s: Option::from(s3_object),
+        s: Option::from(image_information),
         ..Default::default()
     };
     let id_value = AttributeValue {
@@ -56,6 +56,11 @@ async fn handler(event: Value) -> Result<Value, Box<Error>> {
         Err(error) => panic!("Problem adding to DB: {}", error),
     };
     Ok(event)
+}
+
+fn get_image_information(event: &Value) -> String {
+    let s3_object = event["Records"][0]["s3"]["object"].to_string();
+    s3_object
 }
 
 fn example_logging() {
