@@ -12,6 +12,10 @@ type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
 #[lambda]
 #[tokio::main]
 async fn main(event: Value) -> Result<Value, Error> {
+    handler(event).await
+}
+
+async fn handler(event: Value) -> Result<Value, Box<Error>> {
     simple_logger::init().unwrap();
 
     // Check event is s3 notification
