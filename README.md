@@ -1,6 +1,6 @@
-# register-on-upload
+# hello-word-rust-lambda
 
-Simple AWS Lambda to document sent images in a DB.
+A simple AWS Lambda written in Rust.
 
 ## Test
 
