@@ -10,12 +10,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "anyhow"
-version = "1.0.28"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9a60d744a80c30fcb657dfe2c1b22bcb3e814c1a1e3674f32bf5820b570fbff"
-
-[[package]]
 name = "arc-swap"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -791,9 +785,8 @@ dependencies = [
 [[package]]
 name = "lambda"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#4f1d44eb862cd282dc9669f600026abe80a8e7f8"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
 dependencies = [
- "anyhow",
  "bytes 0.5.4",
  "futures 0.3.4",
  "genawaiter",
@@ -812,7 +805,7 @@ dependencies = [
 [[package]]
 name = "lambda-attributes"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#4f1d44eb862cd282dc9669f600026abe80a8e7f8"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
 dependencies = [
  "proc-macro2 0.4.30",
  "quote 1.0.3",
