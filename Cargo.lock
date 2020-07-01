@@ -785,7 +785,7 @@ dependencies = [
 [[package]]
 name = "lambda"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ae3ce1d4aee593b9425a045cd19d2b967d5cf367"
 dependencies = [
  "bytes 0.5.4",
  "futures 0.3.4",
@@ -805,7 +805,7 @@ dependencies = [
 [[package]]
 name = "lambda-attributes"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ae3ce1d4aee593b9425a045cd19d2b967d5cf367"
 dependencies = [
  "proc-macro2 0.4.30",
  "quote 1.0.3",
@@ -1417,7 +1417,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "xml-rs",
 ]
 
@@ -1486,7 +1486,7 @@ dependencies = [
  "serde",
  "serde_json",
  "shlex",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "zeroize",
 ]
 
@@ -1526,7 +1526,7 @@ dependencies = [
  "serde",
  "sha2",
  "time 0.2.14",
- "tokio 0.2.20",
+ "tokio 0.2.21",
 ]
 
 [[package]]
