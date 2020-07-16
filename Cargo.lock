@@ -876,9 +876,9 @@ dependencies = [
 
 [[package]]
 name = "log"
-version = "0.4.8"
+version = "0.4.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14b6052be84e6b71ab17edffc2eeabf5c2c3ae1fdb464aae35ac50c67a44e1f7"
+checksum = "4fabed175da42fed1fa0746b0ea71f412aa9d35e76e95e59b192c64b9dc2bf8b"
 dependencies = [
  "cfg-if",
 ]
@@ -1417,7 +1417,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "xml-rs",
 ]
 
@@ -1486,7 +1486,7 @@ dependencies = [
  "serde",
  "serde_json",
  "shlex",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "zeroize",
 ]
 
@@ -1526,7 +1526,7 @@ dependencies = [
  "serde",
  "sha2",
  "time 0.2.14",
- "tokio 0.2.20",
+ "tokio 0.2.21",
 ]
 
 [[package]]
