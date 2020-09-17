@@ -28,6 +28,27 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cff77d8686867eceff3105329d4698d96c2391c176d5d03adc90c7389162b5b8"
 
 [[package]]
+name = "async-stream"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "22068c0c19514942eefcfd4daf8976ef1aad84e61539f95cd200c35202f80af5"
+dependencies = [
+ "async-stream-impl",
+ "futures-core",
+]
+
+[[package]]
+name = "async-stream-impl"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25f9db3b38af870bf7e5cc649167533b493928e50744e2c30ae350230b414670"
+dependencies = [
+ "proc-macro2 1.0.10",
+ "quote 1.0.3",
+ "syn 1.0.18",
+]
+
+[[package]]
 name = "async-trait"
 version = "0.1.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -519,37 +540,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "genawaiter"
-version = "0.99.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c86bd0361bcbde39b13475e6e36cb24c329964aa2611be285289d1e4b751c1a0"
-dependencies = [
- "futures-core",
- "genawaiter-macro",
- "genawaiter-proc-macro",
- "proc-macro-hack",
-]
-
-[[package]]
-name = "genawaiter-macro"
-version = "0.99.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b32dfe1fdfc0bbde1f22a5da25355514b5e450c33a6af6770884c8750aedfbc"
-
-[[package]]
-name = "genawaiter-proc-macro"
-version = "0.99.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "784f84eebc366e15251c4a8c3acee82a6a6f427949776ecb88377362a9621738"
-dependencies = [
- "proc-macro-error",
- "proc-macro-hack",
- "proc-macro2 1.0.10",
- "quote 1.0.3",
- "syn 1.0.18",
-]
-
-[[package]]
 name = "generic-array"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -785,11 +775,11 @@ dependencies = [
 [[package]]
 name = "lambda"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#c36409c5e65f994c7ff48510cd111905b4aa77c9"
 dependencies = [
+ "async-stream",
  "bytes 0.5.4",
  "futures 0.3.4",
- "genawaiter",
  "http 0.2.1",
  "hyper 0.13.5",
  "lambda-attributes",
@@ -805,7 +795,7 @@ dependencies = [
 [[package]]
 name = "lambda-attributes"
 version = "0.1.0"
-source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#ed3fd167528125b73ce47abfadc38cd274bf59bc"
+source = "git+https://github.com/awslabs/aws-lambda-rust-runtime/#c36409c5e65f994c7ff48510cd111905b4aa77c9"
 dependencies = [
  "proc-macro2 0.4.30",
  "quote 1.0.3",
@@ -1148,32 +1138,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "74490b50b9fbe561ac330df47c08f3f33073d2d00c150f719147d7c54522fa1b"
 
 [[package]]
-name = "proc-macro-error"
-version = "0.4.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18f33027081eba0a6d8aba6d1b1c3a3be58cbb12106341c2d5759fcd9b5277e7"
-dependencies = [
- "proc-macro-error-attr",
- "proc-macro2 1.0.10",
- "quote 1.0.3",
- "syn 1.0.18",
- "version_check",
-]
-
-[[package]]
-name = "proc-macro-error-attr"
-version = "0.4.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a5b4b77fdb63c1eca72173d68d24501c54ab1269409f6b672c85deb18af69de"
-dependencies = [
- "proc-macro2 1.0.10",
- "quote 1.0.3",
- "syn 1.0.18",
- "syn-mid",
- "version_check",
-]
-
-[[package]]
 name = "proc-macro-hack"
 version = "0.5.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1417,7 +1381,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "xml-rs",
 ]
 
@@ -1486,7 +1450,7 @@ dependencies = [
  "serde",
  "serde_json",
  "shlex",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "zeroize",
 ]
 
@@ -1526,7 +1490,7 @@ dependencies = [
  "serde",
  "sha2",
  "time 0.2.14",
- "tokio 0.2.20",
+ "tokio 0.2.21",
 ]
 
 [[package]]
@@ -1860,17 +1824,6 @@ dependencies = [
  "proc-macro2 1.0.10",
  "quote 1.0.3",
  "unicode-xid 0.2.0",
-]
-
-[[package]]
-name = "syn-mid"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7be3539f6c128a931cf19dcee741c1af532c7fd387baa739c03dd2e96479338a"
-dependencies = [
- "proc-macro2 1.0.10",
- "quote 1.0.3",
- "syn 1.0.18",
 ]
 
 [[package]]
