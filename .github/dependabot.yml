@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - Darrenmeehan
+  assignees:
+  - Darrenmeehan
+  ignore:
+  - dependency-name: tokio
+    versions:
+    - 0.2.24
+    - 1.1.0
+    - 1.2.0
+    - 1.3.0
+    - 1.4.0
+  - dependency-name: serde
+    versions:
+    - 1.0.123
+    - 1.0.124
+  - dependency-name: serde_json
+    versions:
+    - 1.0.61
+    - 1.0.62
+    - 1.0.63
+  rebase-strategy: disabled
