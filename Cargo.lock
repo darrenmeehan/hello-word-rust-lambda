@@ -1417,7 +1417,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "xml-rs",
 ]
 
@@ -1486,7 +1486,7 @@ dependencies = [
  "serde",
  "serde_json",
  "shlex",
- "tokio 0.2.20",
+ "tokio 0.2.21",
  "zeroize",
 ]
 
@@ -1526,7 +1526,7 @@ dependencies = [
  "serde",
  "sha2",
  "time 0.2.14",
- "tokio 0.2.20",
+ "tokio 0.2.21",
 ]
 
 [[package]]
@@ -1732,9 +1732,9 @@ dependencies = [
 
 [[package]]
 name = "simple_logger"
-version = "1.6.0"
+version = "1.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fea0c4611f32f4c2bac73754f22dca1f57e6c1945e0590dae4e5f2a077b92367"
+checksum = "28475b72d7e5da6ad80c6d284aa557821bb4f7f788b9f607632635e3783a8608"
 dependencies = [
  "atty",
  "chrono",
